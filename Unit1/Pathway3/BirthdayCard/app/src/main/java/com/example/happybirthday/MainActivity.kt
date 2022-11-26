@@ -38,7 +38,13 @@ import com.example.happybirthday.ui.theme.HappyBirthdayTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent { }
+        setContent {
+            HappyBirthdayTheme() {
+                // A surface container using the 'background' color from the theme
+                Surface(color = MaterialTheme.colors.background) {
+                }
+            }
+        }
     }
 }
 
@@ -55,15 +61,17 @@ fun BirthdayGreetingWithImage(message: String, from: String) { }
 
 // 4. 이미지 컴포저블 추가
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+fun BirthdayGreetingWithText(message: String) {
+    Text(
+        text = message
+    )
 }
 
 @Preview(showBackground = false)
 @Composable
 private fun BirthdayCardPreview() {
     HappyBirthdayTheme() {
-        Greeting("Philip")
+        BirthdayGreetingWithText( "Happy Birthday Philip!")
     }
 }
 
