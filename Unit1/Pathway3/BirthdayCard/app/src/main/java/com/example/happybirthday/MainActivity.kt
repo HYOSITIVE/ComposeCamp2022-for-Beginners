@@ -49,12 +49,21 @@ fun BirthdayGreetingWithText(message: String, from: String) {
     Column { }
 }
 
-// 5. Box 레이아웃 추
+// 5. Box 레이아웃 추가
 @Composable
 fun BirthdayGreetingWithImage(message: String, from: String) { }
 
 // 4. 이미지 컴포저블 추가
+@Composable
+fun Greeting(name: String) {
+    Text(text = "Hello $name!")
+}
+
 @Preview(showBackground = false)
 @Composable
-private fun BirthdayCardPreview() { }
+private fun BirthdayCardPreview() {
+    HappyBirthdayTheme() {
+        Greeting("Philip")
+    }
+}
 
