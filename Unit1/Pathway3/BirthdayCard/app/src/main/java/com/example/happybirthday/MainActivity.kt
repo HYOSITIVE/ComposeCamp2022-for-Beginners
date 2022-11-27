@@ -42,7 +42,7 @@ class MainActivity : ComponentActivity() {
             HappyBirthdayTheme() {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    BirthdayGreetingWithText("Happy Birthday Philip!", "- from Peter")
+                    BirthdayGreetingWithImage("Happy Birthday Philip!", "- from Peter")
                 }
             }
         }
@@ -64,19 +64,22 @@ fun BirthdayGreetingWithText(message: String, from: String) {
 }
 
 @Composable
-fun BirthDayGreetingWithImage(message: String, from: String) {
+fun BirthdayGreetingWithImage(message: String, from: String) {
     val image = painterResource(R.drawable.androidparty)
-    Image(
-        painter = image,
-        contentDescription = null
-    )
+    Box {
+        Image(
+            painter = image,
+            contentDescription = null
+        )
+        BirthdayGreetingWithText(message = message, from = from)
+    }
 }
 
 @Preview(showBackground = false)
 @Composable
 private fun BirthdayCardPreview() {
     HappyBirthdayTheme() {
-        BirthDayGreetingWithImage( "Happy Birthday Philip!", "- from Peter")
+        BirthdayGreetingWithImage( "Happy Birthday Philip!", "- from Peter")
     }
 }
 
