@@ -63,11 +63,20 @@ fun BirthdayGreetingWithText(message: String, from: String) {
     }
 }
 
+@Composable
+fun BirthDayGreetingWithImage(message: String, from: String) {
+    val image = painterResource(R.drawable.androidparty)
+    Image(
+        painter = image,
+        contentDescription = null
+    )
+}
+
 @Preview(showBackground = false)
 @Composable
 private fun BirthdayCardPreview() {
     HappyBirthdayTheme() {
-        BirthdayGreetingWithText( "Happy Birthday Philip!", "- from Peter")
+        BirthDayGreetingWithImage( "Happy Birthday Philip!", "- from Peter")
     }
 }
 
