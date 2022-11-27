@@ -42,7 +42,7 @@ class MainActivity : ComponentActivity() {
             HappyBirthdayTheme() {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    BirthdayGreetingWithImage("Happy Birthday Philip!", "- from Peter")
+                    BirthdayGreetingWithImage(getString(R.string.happy_birthday_text), getString(R.string.signature_text))
                 }
             }
         }
